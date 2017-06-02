@@ -1,0 +1,21 @@
+[{
+    "title": "Video Camera",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
+    "image": "images/vixia.jpg"
+}, {
+    "title": "Tripod",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
+    "image": "images/tripod.jpg"
+}, {
+    "title": "Audio Recorder",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
+    "image": "images/audio-recorder.jpg"
+}, {
+    "title": "DSLR Camera",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
+    "image": "images/dslr.png"
+}, {
+    "title": "PA System",
+    "description": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit",
+    "image": "images/pa-system.jpg"
+}]

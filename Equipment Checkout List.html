@@ -3,18 +3,20 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 
-</div>
+
 <style>
 	h4   	{color: black; text-decoration: underline; text-decoration: bold}
 	a		{text-decoration: underline; text-decoration: bold; font-size: 12pt}
 	html *  {color: black; font-family: "HelveticaNeue-Light"}
 	
 h4 {
-    background-color: #ffeda8;	<!-- #eee -->
+    background-color: #ffeda8;	/* #eee */
     color: #444;
     cursor: pointer;
     padding: 18px;
@@ -28,704 +30,733 @@ h4 {
     margin-bottom: 1px;
 }
 
+figure {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 40px;
+    margin-right: 40px;
+    border-style: solid;
+}
 </style>
 
+<script type="text/javascript">
+$.getJSON('equipment.json', function(data) {
+	data.forEach(function(item) {
+		accordion = jQuery('<div/>', {
+			class: 'accordion-toggle',
+			text: item.title,
+			description: item.description,
+			image: item.image
+		}).appendTo('#accordion1');
+	});
+	$(document).tooltip({
+            items: '.accordion-toggle',
+            content: function() {
+                var element = $(this);
+                var description = element.attr('description');
+                var image = element.attr('image');
+                return '<img class="portlet-image" src="' + image + '"><br>' + description;
+            }
+        });
+});
+</script>
+
 <body>
-
-<div class="accordion" id="accordion1">
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                <h4> Audio </h4> </a>
-        </div>
-        <div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion" id="accordion2">
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneOne">
-                                Amps </a>
-                        </div>
-                        <div id="collapseOneOne" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneTwo">
-                                Boom Poles </a>
-                        </div>
-                        <div id="collapseOneTwo" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneThree">
-                                Headphones </a>
-                        </div>
-                        <div id="collapseOneThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneFour">
-                                Hearing Assistant System </a>
-                        </div>
-                        <div id="collapseOneFour" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneFive">
-                                Audio Keyboards </a>
-                        </div>
-                        <div id="collapseOneFive" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneSix">
-                                Microphone Stands </a>
-                        </div>
-                        <div id="collapseOneSix" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneSeven">
-                                Microphones </a>
-                        </div>
-                        <div id="collapseOneSeven" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneEight">
-                                PA Systems </a>
-                        </div>
-                        <div id="collapseOneEight" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneNine">
-                                Phone Taps </a>
-                        </div>
-                        <div id="collapseOneNine" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneTen">
-                                Audio Recorder </a>
-                        </div>
-                        <div id="collapseOneTen" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                TASCAM's DR-07 brings portable digital recording to an even smaller, more affordable package. A pair of highly-sensitive built in mics captures a wide stereo image, recording in either MP3 or 16/24-bit WAV format. The DR-07 is powered by AA batteries and it transfers files to a computer using a high-speed USB 2.0 connection. The versatile recorder even includes a windscreen, tripod stand mount and 2GB SD card to start recording right away.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneEleven">
-                                Speaker Stands </a>
-                        </div>
-                        <div id="collapseOneEleven" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneTwelve">
-                                Speaker </a>
-                        </div>
-                        <div id="collapseOneTwelve" class="accordion-body collapse" style="height: 0px;">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
+	<div class="accordion" id="accordion1">
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+					<h4> Audio </h4> </a>
+			</div>
+			<div id="collapseOne" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion" id="accordion2">
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneOne">
+									Amps </a>
+							</div>
+							<div id="collapseOneOne" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneTwo">
+									Boom Poles </a>
+							</div>
+							<div id="collapseOneTwo" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneThree">
+									Headphones </a>
+							</div>
+							<div id="collapseOneThree" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+							</div>
+						</div>
+					</div>
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneFour">
+									Hearing Assistant System </a>
+							</div>
+							<div id="collapseOneFour" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneFive">
+									Audio Keyboards </a>
+							</div>
+							<div id="collapseOneFive" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneSix">
+									Microphone Stands </a>
+							</div>
+							<div id="collapseOneSix" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneSeven">
+									Microphones </a>
+							</div>
+							<div id="collapseOneSeven" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneEight">
+									PA Systems </a>
+							</div>
+							<div id="collapseOneEight" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneNine">
+									Phone Taps </a>
+							</div>
+							<div id="collapseOneNine" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneTen">
+									Audio Recorder </a>
+							</div>
+							<div id="collapseOneTen" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									TASCAM's DR-07 brings portable digital recording to an even smaller, more affordable package. A pair of highly-sensitive built in mics captures a wide stereo image, recording in either MP3 or 16/24-bit WAV format. The DR-07 is powered by AA batteries and it transfers files to a computer using a high-speed USB 2.0 connection. The versatile recorder even includes a windscreen, tripod stand mount and 2GB SD card to start recording right away.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneEleven">
+									Speaker Stands </a>
+							</div>
+							<div id="collapseOneEleven" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOneTwelve">
+									Speaker </a>
+							</div>
+							<div id="collapseOneTwelve" class="accordion-body collapse" style="height: 0px;">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
   
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">
-                <h4> Camera Accessories </h4> </a>
-        </div>
-        <div id="collapseFour" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourOne">
-                                Backdrop Kits </a>
-                        </div>
-                        <div id="collapseFourOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                  <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourTwo">
-                                C-Stands </a>
-                        </div>
-                        <div id="collapseFourTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourThree">
-                                iMounts </a>
-                        </div>
-                        <div id="collapseFourThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourFour">
-                                Lenses </a>
-                        </div>
-                        <div id="collapseFourFour" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourFive">
-                                Shoulder Rigs </a>
-                        </div>
-                        <div id="collapseFourFive" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Improves the stability of your handheld shots by adding a shoulder pad and handgrips to your camera setup.
-                            </div>
-                        </div>
-                   </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">
-               <h4> Camera Document </h4> </a>
-        </div>
-        <div id="collapseFive" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSix">
-               <h4> Camera Still </h4> </a>
-        </div>
-        <div id="collapseSix" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixOne">
-                                DSLR </a>
-                        </div>
-                        <div id="collapseSixOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixTwo">
-                                DSLR Kits </a>
-                        </div>
-                        <div id="collapseSixTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Comes with Canon 70D DSLR camera, shotgun mic, tripod, SD card reader, earbuds, battery charger, and power supply.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixThree">
-                                Point and Shoot </a>
-                        </div>
-                        <div id="collapseSixThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSeven">
-               <h4> Camera Video </h4> </a>
-        </div>
-        <div id="collapseSeven" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSevenOne">
-                                Flip Kodak Cameras </a>
-                        </div>
-                        <div id="collapseSevenOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSevenTwo">
-                                MP4 Camera Kits </a>
-                        </div>
-                        <div id="collapseSevenTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSevenThree">
-                                Time Lapse Cameras </a>
-                        </div>
-                        <div id="collapseSevenThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                The TLC200 from Brinno is a simple solution for creating high definition time lapse videos with ease - whether you're recording plants growing in a home garden, or the sun setting on a beach.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSevenFour">
-                                Video Camera </a>
-                        </div>
-                        <div id="collapseSevenFour" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseEight">
-               <h4> Camera Web </h4> </a>
-        </div>
-        <div id="collapseEight" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEightOne">
-                                Webcam </a>
-                        </div>
-                        <div id="collapseEightOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEightTwo">
-                                Webcam Kits </a>
-                        </div>
-                        <div id="collapseEightTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Kits come with an easy-to-operate Logitech webcam, tripod, and USB extension cable.
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour">
+					<h4> Camera Accessories </h4> </a>
+			</div>
+			<div id="collapseFour" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourOne">
+									Backdrop Kits </a>
+							</div>
+							<div id="collapseFourOne" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					  <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourTwo">
+									C-Stands </a>
+							</div>
+							<div id="collapseFourTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourThree">
+									iMounts </a>
+							</div>
+							<div id="collapseFourThree" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourFour">
+									Lenses </a>
+							</div>
+							<div id="collapseFourFour" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourFive">
+									Shoulder Rigs </a>
+							</div>
+							<div id="collapseFourFive" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Improves the stability of your handheld shots by adding a shoulder pad and handgrips to your camera setup.
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive">
+				   <h4> Camera Document </h4> </a>
+			</div>
+			<div id="collapseFive" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSix">
+				   <h4> Camera Still </h4> </a>
+			</div>
+			<div id="collapseSix" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixOne">
+									DSLR </a>
+							</div>
+							<div id="collapseSixOne" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixTwo">
+									DSLR Kits </a>
+							</div>
+							<div id="collapseSixTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Comes with Canon 70D DSLR camera, shotgun mic, tripod, SD card reader, earbuds, battery charger, and power supply.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixThree">
+									Point and Shoot </a>
+							</div>
+							<div id="collapseSixThree" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSeven">
+				   <h4> Camera Video </h4> </a>
+			</div>
+			<div id="collapseSeven" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSevenOne">
+									Flip Kodak Cameras </a>
+							</div>
+							<div id="collapseSevenOne" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSevenTwo">
+									MP4 Camera Kits </a>
+							</div>
+							<div id="collapseSevenTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSevenThree">
+									Time Lapse Cameras </a>
+							</div>
+							<div id="collapseSevenThree" class="accordion-body collapse">
+								<div class="accordion-inner">
+									The TLC200 from Brinno is a simple solution for creating high definition time lapse videos with ease - whether you're recording plants growing in a home garden, or the sun setting on a beach.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSevenFour">
+									Video Camera </a>
+							</div>
+							<div id="collapseSevenFour" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseEight">
+				   <h4> Camera Web </h4> </a>
+			</div>
+			<div id="collapseEight" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEightOne">
+									Webcam </a>
+							</div>
+							<div id="collapseEightOne" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEightTwo">
+									Webcam Kits </a>
+							</div>
+							<div id="collapseEightTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Kits come with an easy-to-operate Logitech webcam, tripod, and USB extension cable.
 
-                            </div>
-                        </div>
-                   </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseNine">
-               <h4> SD Card Readers </h4> </a>
-        </div>
-        <div id="collapseNine" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseEleven">
-               <h4> Wacom Tablets </h4> </a>
-        </div>
-        <div id="collapseEleven" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwelve">
-               <h4> Lighting Accessories </h4> </a>
-        </div>
-        <div id="collapseTwelve" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwelveOne">
-                                Flash Lighting </a>
-                        </div>
-                        <div id="collapseTwelveOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwelveTwo">
-                                Light Disks and Backdrops </a>
-                        </div>
-                        <div id="collapseTwelveTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwelveThree">
-                                Light Kits </a>
-                        </div>
-                        <div id="collapseTwelveThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-            </div>
-        </div>
-    </div>
-     
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFourteen">
-               <h4> Players </h4> </a>
-        </div>
-        <div id="collapseFourteen" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenOne">
-                                Boomboxes </a>
-                        </div>
-                        <div id="collapseFourteenOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenTwo">
-                                Tape Recorders </a>
-                        </div>
-                        <div id="collapseFourteenTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenThree">
-                                DVD Player </a>
-                        </div>
-                        <div id="collapseFourteenThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenFour">
-                                VCR </a>
-                        </div>
-                        <div id="collapseFourteenFour" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenFive">
-                                DVD/VHS Combo Player </a>
-                        </div>
-                        <div id="collapseFourteenFive" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFifteen">
-               <h4> Presentation Remotes </h4> </a>
-        </div>
-        <div id="collapseFifteen" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSixteen">
-               <h4> Projection </h4> </a>
-        </div>
-        <div id="collapseSixteen" class="accordion-body collapse" style="height: 0px;">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixteenOne">
-                                Projectors </a>
-                        </div>
-                        <div id="collapseSixteenOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                The XL2550U XGA Projector is a very versatile projector that is ideal for many types of projector needs. Mac adapter, VGA, and remote included.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixteenTwo">
-                                Projector Stands </a>
-                        </div>
-                        <div id="collapseSixteenTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixteenThree">
-                                Screens </a>
-                        </div>
-                        <div id="collapseSixteenThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-            </div>
-        </div>
-    </div>
-    <div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSeventeen">
-               <h4> Storage Devices </h4> </a>
-        </div>
-        <div id="collapseSeventeen" class="accordion-body collapse">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeventeenOne">
-                                Hard Drives </a>
-                        </div>
-                        <div id="collapseSeventeenOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeventeenTwo">
-                                SD Cards </a>
-                        </div>
-                        <div id="collapseSeventeenTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                4GB and 16GB SD cards are available.
-                            </div>
-                        </div>
-                   </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="accordion-group">
-        <div class="accordion-heading">
-            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseEighteen">
-               <h4> Tripods </h4> </a>
-        </div>
-        <div id="collapseEighteen" class="accordion-body collapse">
-            <div class="accordion-inner">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                ad squid.
-                <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenOne">
-                                Monopod </a>
-                        </div>
-                        <div id="collapseEighteenOne" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenTwo">
-                                For Phones </a>
-                        </div>
-                        <div id="collapseEighteenTwo" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenThree">
-                                Standard </a>
-                        </div>
-                        <div id="collapseEighteenThree" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                These tripods can be used with video and DSLR cameras. Easy to operate and very sturdy.
-
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenFour">
-                                For Still Cameras </a>
-                        </div>
-                        <div id="collapseEighteenFour" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-                   <div class="accordion-group">
-                        <div class="accordion-heading">
-                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenFive">
-                                Tabletop </a>
-                        </div>
-                        <div id="collapseEighteenFive" class="accordion-body collapse">
-                            <div class="accordion-inner">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
-                                ad squid.
-                            </div>
-                        </div>
-                   </div>
-            </div>
-        </div>
-    </div>
-</div>
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseNine">
+				   <h4> SD Card Readers </h4> </a>
+			</div>
+			<div id="collapseNine" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseEleven">
+				   <h4> Wacom Tablets </h4> </a>
+			</div>
+			<div id="collapseEleven" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwelve">
+				   <h4> Lighting Accessories </h4> </a>
+			</div>
+			<div id="collapseTwelve" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwelveOne">
+									Flash Lighting </a>
+							</div>
+							<div id="collapseTwelveOne" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwelveTwo">
+									Light Disks and Backdrops </a>
+							</div>
+							<div id="collapseTwelveTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwelveThree">
+									Light Kits </a>
+							</div>
+							<div id="collapseTwelveThree" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+		</div>
+	 
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFourteen">
+				   <h4> Players </h4> </a>
+			</div>
+			<div id="collapseFourteen" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenOne">
+									Boomboxes </a>
+							</div>
+							<div id="collapseFourteenOne" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenTwo">
+									Tape Recorders </a>
+							</div>
+							<div id="collapseFourteenTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenThree">
+									DVD Player </a>
+							</div>
+							<div id="collapseFourteenThree" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenFour">
+									VCR </a>
+							</div>
+							<div id="collapseFourteenFour" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFourteenFive">
+									DVD/VHS Combo Player </a>
+							</div>
+							<div id="collapseFourteenFive" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseFifteen">
+				   <h4> Presentation Remotes </h4> </a>
+			</div>
+			<div id="collapseFifteen" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSixteen">
+				   <h4> Projection </h4> </a>
+			</div>
+			<div id="collapseSixteen" class="accordion-body collapse" style="height: 0px;">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixteenOne">
+									Projectors </a>
+							</div>
+							<div id="collapseSixteenOne" class="accordion-body collapse">
+								<div class="accordion-inner">
+									The XL2550U XGA Projector is a very versatile projector that is ideal for many types of projector needs. Mac adapter, VGA, and remote included.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixteenTwo">
+									Projector Stands </a>
+							</div>
+							<div id="collapseSixteenTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSixteenThree">
+									Screens </a>
+							</div>
+							<div id="collapseSixteenThree" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+		</div>
+		<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseSeventeen">
+				   <h4> Storage Devices </h4> </a>
+			</div>
+			<div id="collapseSeventeen" class="accordion-body collapse">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeventeenOne">
+									Hard Drives </a>
+							</div>
+							<div id="collapseSeventeenOne" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeventeenTwo">
+									SD Cards </a>
+							</div>
+							<div id="collapseSeventeenTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									4GB and 16GB SD cards are available.
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="accordion-group">
+			<div class="accordion-heading">
+				<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapseEighteen">
+				   <h4> Tripods </h4> </a>
+			</div>
+			<div id="collapseEighteen" class="accordion-body collapse">
+				<div class="accordion-inner">
+					Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+					ad squid.
+					<div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenOne">
+									Monopod </a>
+							</div>
+							<div id="collapseEighteenOne" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenTwo">
+									For Phones </a>
+							</div>
+							<div id="collapseEighteenTwo" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenThree">
+									Standard </a>
+							</div>
+							<div id="collapseEighteenThree" class="accordion-body collapse">
+								<div class="accordion-inner">
+								These tripods can be used with video and DSLR cameras. Easy to operate and very sturdy.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenFour">
+									For Still Cameras </a>
+							</div>
+							<div id="collapseEighteenFour" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+					   <div class="accordion-group">
+							<div class="accordion-heading">
+								<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEighteenFive">
+									Tabletop </a>
+							</div>
+							<div id="collapseEighteenFive" class="accordion-body collapse">
+								<div class="accordion-inner">
+									Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson
+									ad squid.
+								</div>
+							</div>
+					   </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 
